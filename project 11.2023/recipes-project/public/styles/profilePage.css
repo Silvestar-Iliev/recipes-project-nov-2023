@@ -1,0 +1,138 @@
+        /* Profile page */
+        .profile-container {
+            width: 800px;
+            margin: 20px auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* user info */
+        .user-info {
+            margin-bottom: 20px;
+        }
+
+        .user-info h2 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .user-info p {
+            color:white;
+        }
+
+        .user-info span {
+            font-size: 20px;
+            color: #45a049;
+        }
+
+        /* recipes list */
+        /* my-recipe list & favorites-recipe-list */
+        .recipes-lists{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .my-recipes-list,
+        .favorite-recipes-list {
+            width: 45%;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .my-recipes-list a,
+        .favorite-recipes-list a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 3px;
+            font-weight: 600;
+            width: 260px;
+        }
+
+        .my-recipes-list a:hover,
+        .favorite-recipes-list div:hover {
+            background-color: #45a049;
+        }
+
+
+        /* favorites-recipe-list */
+        .favorite-recipes-list div {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        .favorites-list-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .favorites-list-buttons button {
+            border-radius: 4px;
+            background-color: white;
+            color: #333;
+            padding: 4px 6px;
+        }        
+
+        .favorites-list-buttons button:hover {
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+        }
+
+
+        /* Calculate button */
+
+        .calculate-button {
+            align-self: center;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 6px;
+            border:1px solid black;
+            color: #333;
+        }
+
+        .calculate-button:hover {
+            background-color:  #333;
+            color: white;
+        }
+        
+        #checked {
+            background-color: #333;
+            color: white; 
+        }
+
+        /* Result container */
+
+        .result-calc {
+            justify-self: center;
+            margin: 20px auto 50px auto;
+            width: 75%;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .result-calc span {
+            align-self: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #45a049;
+        }
+
+        .result-calc p {
+            font-weight: 600;
+            line-height: 0.5;
+        }

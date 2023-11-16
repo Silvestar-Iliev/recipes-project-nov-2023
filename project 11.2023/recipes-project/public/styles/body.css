@@ -1,0 +1,17 @@
+        /* body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: rgb(114, 113, 113); */
+            background-color: #fddf59;
+        }
+
+        .app {
+            display: flex;
+            flex-direction: column;
+            width: 98%;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
