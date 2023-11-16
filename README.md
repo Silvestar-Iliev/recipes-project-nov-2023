@@ -8,7 +8,7 @@ This project is an exam assignment for the ReactJS course at SoftUni in October 
 # Installation:
 
 1. Download the project folder and place it in the same directory as the SoftUni educational server folder.
-2. Install the required node_modules by running npm i in both the project and server folders.
+2. Install the required node_modules by running npm i in the recipes-project folder.
 3. In the project folder, open the terminal and start the project with npm start.
 4. In the server folder, open the terminal and start the server with node server.js.
 
