@@ -1,0 +1,13 @@
+.notFound {
+    background-image: url('https://i.ytimg.com/vi/u8_ICkj9l9M/maxresdefault.jpg'); 
+    background-size: cover;
+    background-position: center;
+    width: 1200px;
+    height: 600px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+

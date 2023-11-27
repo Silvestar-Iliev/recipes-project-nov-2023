@@ -1,14 +1,19 @@
+import styles from './EditRecipe.module.css';
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+
+import { RecipeContext } from "../../contexts/RecipeContext";
 
 import { useForm } from "../../hooks/useForm";
 import * as recipeService from '../../services/recipeService';
+import { ErrorContainer } from '../common/ErrorContainer/ErrorContainer';
 
 
-export const EditRecipe = ({
-    onEditSubmitHandler,
-}) => {
-    const {values, onChangeHandler, onSubmit, changeValues} = useForm({
+export const EditRecipe = () => {
+    const { onEditSubmitHandler } = useContext(RecipeContext);
+
+    const {values, onChangeHandler, onSubmit, changeValues, errorMessage} = useForm({
         title: '',
         description: '',
         imageUrl: '',
@@ -29,9 +34,11 @@ export const EditRecipe = ({
     }, [recipeId])
 
     return (
-        <div className="edit-recipe-form">
+        <>
+        {errorMessage && <ErrorContainer error={errorMessage} />}   
+        <div className={styles["edit-recipe-form"]}>
             <form method="POST" onSubmit={onSubmit}>
-                <h2 className="create-header">Create recipe</h2>
+                <h2 className={styles["edit-header"]}>Edit recipe</h2>
                 <label htmlFor="title">Recipe title:</label>
                 <input 
                     type="text" 
@@ -50,7 +57,7 @@ export const EditRecipe = ({
                     onChange={onChangeHandler}
                 ></textarea>
                 <span>For 100g</span>
-                <div className="recipe-macros">
+                <div className={styles["recipe-macros"]}>
                     <label htmlFor="calories">Calories:</label>
                     <input 
                         type="number" 
@@ -97,8 +104,10 @@ export const EditRecipe = ({
                     value={values.imageUrl} 
                     onChange={onChangeHandler}
                 />
-                <input type="submit" value="Create Recipe" />
+                <input type="submit" value="Edit Recipe" />
             </form>
         </div>
+        </>
+        
     );
 };

@@ -1,10 +1,16 @@
+import styles from './CreateRecipe.module.css';
+import { useContext, useState } from "react";
+
+import { RecipeContext } from "../../contexts/RecipeContext";
 import { useForm } from "../../hooks/useForm";
+import { ErrorContainer } from '../common/ErrorContainer/ErrorContainer';
 
 
-export const CreateRecipe = ({
-    onCreateRecipeSubmit,
-}) => {
-    const {values, onChangeHandler, onSubmit} = useForm({
+export const CreateRecipe = () => {
+    const { onCreateRecipeSubmit } = useContext(RecipeContext);
+
+
+    const {values, onChangeHandler, onSubmit, errorMessage} = useForm({
         title: '',
         description: '',
         imageUrl: '',
@@ -14,11 +20,13 @@ export const CreateRecipe = ({
         fat: 0,
     }, onCreateRecipeSubmit);
 
-
+    
     return (
-        <div className="create-recipe-form">
+        <> 
+        {errorMessage && <ErrorContainer error={errorMessage} />}       
+        <div className={styles["create-recipe-form"]}>
             <form method="POST" onSubmit={onSubmit}>
-                <h2 className="create-header">Create recipe</h2>
+                <h2 className={styles["create-header"]}>Create recipe</h2>
                 <label htmlFor="title">Recipe title:</label>
                 <input 
                     type="text" 
@@ -37,7 +45,7 @@ export const CreateRecipe = ({
                     onChange={onChangeHandler}
                 ></textarea>
                 <span>For 100g</span>
-                <div className="recipe-macros">
+                <div className={styles["recipe-macros"]}>
                     <label htmlFor="calories">Calories:</label>
                     <input 
                         type="number" 
@@ -87,5 +95,7 @@ export const CreateRecipe = ({
                 <input type="submit" value="Create Recipe" />
             </form>
         </div>
+        </>
+
     );
 };

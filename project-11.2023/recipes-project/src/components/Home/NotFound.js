@@ -1,9 +1,11 @@
+import styles from './NotFound.module.css';
 
 export const NotFound = () => {
     return(
-        <div className="notFound-image">
-            <div className="notFound-text"></div>
-        </div>
+        <>
+        <div className={styles["notFound"]}></div>
+
+        </>
     );
 };
 

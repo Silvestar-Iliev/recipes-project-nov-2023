@@ -29,9 +29,14 @@ export const getAllForUser = async (userId) => {
 
 
 export const create = async (data) => {
-    const result = await request.post( url, data);
-    
-    return result;
+
+    if (data.calories < 0 || data.protein < 0 || data.carbs < 0 || data.fat < 0) {
+        throw new Error('Мacronutrients should be a positive numbers.');
+    }   
+
+    const result = await request.post( url, data );
+        
+    return result;        
 };
 
 
@@ -42,6 +47,11 @@ export const del = async(recipeId) => {
 };
 
 export const edit = async(recipeId, data) => {
+
+    if (data.calories < 0 || data.protein < 0 || data.carbs < 0 || data.fat < 0) {
+        throw new Error('Мacronutrients should be a positive numbers.');
+    }   
+    
     const result = await request.put(`${url}/${recipeId}`, data);
 
     return result;

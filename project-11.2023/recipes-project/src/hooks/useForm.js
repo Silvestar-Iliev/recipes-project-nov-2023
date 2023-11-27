@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export const useForm = (initialValues, onSubmitHandler) => {
     const [values, setValues] = useState(initialValues);
+    const [errorMessage, setErrorMessage] = useState('');
 
 
     const onChangeHandler = (e) => {
@@ -10,12 +11,18 @@ export const useForm = (initialValues, onSubmitHandler) => {
     };
 
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
    
-        onSubmitHandler(values);
-        
-        setValues(initialValues);
+        try {
+
+            await onSubmitHandler(values); 
+            setValues(initialValues);
+
+        } catch (error) {
+            setErrorMessage(error.message);
+        }
+
     };
 
     const changeValues = (newValues) => {
@@ -29,5 +36,6 @@ export const useForm = (initialValues, onSubmitHandler) => {
         onChangeHandler,
         onSubmit,
         changeValues,
+        errorMessage,
     };
 };

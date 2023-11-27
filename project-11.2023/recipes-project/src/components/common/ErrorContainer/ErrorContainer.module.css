@@ -1,0 +1,12 @@
+.error-container {
+    padding: 20px 30px;
+    margin-left: 400px;
+    background-color: red;
+    border-radius: 4px;
+    position: absolute;
+}
+
+.error-container p{
+    color: white;
+    font-size: medium;
+}

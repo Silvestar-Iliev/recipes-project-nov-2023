@@ -15,31 +15,43 @@ export const AuthProvider = ({
 
     const onRegisterSubmit = async(data) => {
 
-        if (data.confirmPassword !== data.password) {
-            return alert("Passwords dont't match.")
-        }
 
         try {
+            if (data.confirmPassword !== data.password) {
+                throw new Error("Passwords dont't match.")
+            }
+
+            if (data.username.length < 3) {
+                throw new Error("Username should be least 3 characters.")
+            }
+
+            if (data.email.length < 10) {
+                throw new Error("Email should be least 10 characters.")
+            }
+
             const result = await authService.register(data);
             
             setAuth(result);      
             navigate('/recipes');
-
         } catch (error) {
-            console.log(error);
+            throw error;
         };
     };
 
     
     const onLoginSubmit = async(data) => {
         try {
+            if (data.email.length < 10) {
+                throw new Error("Email should be least 10 characters.")
+            }
+
             const result = await authService.login(data);
 
             setAuth(result);      
             navigate('/recipes');
 
         } catch (error) {
-            console.log(error);
+            throw error;
         };
 
     };

@@ -1,3 +1,4 @@
+import styles from '../Profile.module.css';
 import { Link } from "react-router-dom";
 
 
@@ -5,7 +6,7 @@ export const MyRecipesList = ({
     myRecipes,
 }) => {
     return(
-        <div className="my-recipes-list">
+        <div className={styles["my-recipes-list"]}>
             <h3>My recipes:</h3>
             <ul>
                 {myRecipes

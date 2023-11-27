@@ -1,0 +1,192 @@
+        /* Details page */
+
+        .details-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 800px;
+            margin: 20px auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-info {
+            display: flex;
+            gap: 50px;
+        }
+
+        .recipe-info span{
+            color: #4CAF50;
+            font-size: 20px;
+        }
+
+        .recipe-macros {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .recipe-macros span {
+            color: #4CAF50;
+            font-size: 20px;
+        }
+
+        .recipe-details {
+            margin-bottom: 20px;
+            width: 65%;
+        }
+
+        .recipe-details img{
+            width: 100%;
+            border-radius: 5px;
+            height: 60%;
+        }
+
+        .recipe-details h2 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .recipe-details p {
+            margin-bottom: 15px;
+            color: white;
+        }
+
+
+        /* Buttons */
+
+        
+        .buttons {
+            margin-top: 100px;
+    
+        }    
+
+
+        /* like buttons */
+        
+        .like-buttons {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-direction: column;
+        }
+
+        .like-buttons p {
+            color: white;
+            display: inline-block;
+        }
+
+        .like-buttons span {
+            color: #4CAF49;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .like-buttons button {
+            background-color: #4CAF49;
+            color: white;
+            padding: 14px 20px;
+            margin: 30px 10px 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .like-buttons button:hover {
+            background-color: #45a050;
+        }
+
+        .like-buttons button:disabled {
+            background-color: #96a596;
+        }
+
+
+        /* edit & delete buttons */
+
+        .edit-delete-buttons {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .edit-delete-buttons button,
+        .link-btn {
+            background-color: #4CAF49;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+
+        .edit-delete-buttons button:hover,
+        .link-btn:hover{
+            background-color: #45a050;
+        }
+
+
+        /* Comment section */
+
+        .comment-section {
+            margin-bottom: 20px;
+            background-color: #45a049;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .comment-section h3 {
+            color: white;
+        }
+
+        .comment-section p {
+            color: white;
+        }
+
+        .comment-form {
+            margin-bottom: 15px;
+        }
+
+        .comment-form form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .comment-form textarea {
+            height: 100px;
+            width: 400px;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        .comment-form input {
+            background-color: #4CAF49;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .comment-form input:hover {
+            background-color: #45a050;
+        }

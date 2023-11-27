@@ -1,3 +1,4 @@
+import styles from './Profile.module.css';
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -79,14 +80,14 @@ export const Profile = () => {
     };
 
     return(
-        <div className="profile-container">
-            <div className="user-info">
+        <div className={styles["profile-container"]}>
+            <div className={styles["user-info"]}>
                 <h2>User Profile</h2>
                 <p>Username: <span>{username || userEmail}</span></p>
                 <p>Email: <span>{userEmail}</span></p>
             </div>
         
-            <div className="recipes-lists">
+            <div className={styles["recipes-lists"]}>
                 <MyRecipesList myRecipes={myRecipes} />
                 <FavoritesRecipesList 
                     myFavorites={myFavorites} 

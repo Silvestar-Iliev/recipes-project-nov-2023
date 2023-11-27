@@ -1,13 +1,15 @@
+import styles from './Register.module.css';
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../contexts/AuthContext";
+import { ErrorContainer } from '../common/ErrorContainer/ErrorContainer';
 
 
 export const Register = () => {
     const {onRegisterSubmit} = useContext(AuthContext);
-    const {values, onChangeHandler, onSubmit} = useForm({
+    const {values, onChangeHandler, onSubmit, errorMessage} = useForm({
         email: '',
         username: '',
         password: '',
@@ -15,7 +17,9 @@ export const Register = () => {
     }, onRegisterSubmit);
 
     return (
-        <div className="register-form">
+        <>
+        {errorMessage && <ErrorContainer error={errorMessage} />}
+        <div className={styles["register-form"]}>
             <form method="POST" onSubmit={onSubmit}>
                 <label htmlFor="email">Email:</label>
                 <input 
@@ -55,12 +59,14 @@ export const Register = () => {
                     onChange={onChangeHandler}
                 />
 
-                <input className="btn submit" type="submit" value="Register"/>
+                <input className={styles["btn submit"]} type="submit" value="Register"/>
 
-                <p className="field">
-                    <span>If you already have profile click <Link className="link" to="/users/login">here</Link></span>
+                <p className={styles["field"]}>
+                    <span>If you already have profile click <Link className={styles["link"]} to="/users/login">here</Link></span>
                 </p>
             </form>
         </div>
+        </>
+        
     );
 };

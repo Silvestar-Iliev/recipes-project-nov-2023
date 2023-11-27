@@ -1,3 +1,4 @@
+import styles from './DetailsRecipe.module.css';
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 
@@ -9,15 +10,15 @@ import * as favoriteService from '../../services/favoriteService';
 
 
 import { AuthContext } from "../../contexts/AuthContext";
-
+import { RecipeContext } from "../../contexts/RecipeContext";
 
 import { CommentsContainer } from "./CommentsContainer/CommentsContainer";
 import { EditDeleteButtons } from "./EditDeleteButtons/EditDeleteButtons";
 import { LikeButtons } from "./LikeButtons/LikeButtons";
 
-export const DetailsRecipe = ({
-    onDeleteClick,
-}) => {
+export const DetailsRecipe = () => {
+    const { onDeleteClick } = useContext(RecipeContext);
+
     const {recipeId} = useParams();
     const [recipe, setRecipe] = useState({});
     const [comments, setComments] = useState([]);
@@ -94,13 +95,13 @@ export const DetailsRecipe = ({
 
     
     return(
-        <div className="details-container">
-            <div className="recipe-info">
-                    <div className="recipe-details">
+        <div className={styles["details-container"]}>
+            <div className={styles["recipe-info"]}>
+                    <div className={styles["recipe-details"]}>
                         <img src={recipe.imageUrl} alt={recipe.title} />
                         <h2>{recipe.title}</h2>
                         <p>For <span>100g</span></p>
-                        <div className="recipe-macros">
+                        <div className={styles["recipe-macros"]}>
                             <p>Calories: <span>{recipe.calories}</span></p>
                             <p>Protein: <span>{recipe.protein}g</span></p>
                             <p>Carbohydrates: <span>{recipe.carbs}g</span></p>
@@ -108,7 +109,7 @@ export const DetailsRecipe = ({
                         </div>
                         <p>Description: {recipe.description}</p>
                     </div>
-                    <div className="buttons">
+                    <div className={styles["buttons"]}>
                         {isOwner && <EditDeleteButtons onDeleteClick={onDeleteClick} recipe={recipe} />}
                         {isAuthenticated && !isOwner &&
                             <LikeButtons 

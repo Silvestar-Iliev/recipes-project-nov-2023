@@ -1,3 +1,4 @@
+import styles from '../DetailsRecipe.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faHeart } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,18 +12,18 @@ export const LikeButtons = ({
 }) => {
 
     return(
-        <div className="like-buttons">
-            <div className="like-container">
+        <div className={styles["like-buttons"]}>
+            <div className={styles["like-container"]}>
                 <button 
                     onClick={addLikeClick} 
                     disabled={isLiker}
-                >Like <FontAwesomeIcon icon={faThumbsUp} className='icon'/></button>
+                >Like <FontAwesomeIcon icon={faThumbsUp} className={styles['icon']}/></button>
                 <p>Likes:<span> {likes}</span></p>
             </div>
             <button 
                 onClick={addToFavoritesClick}
                 disabled={isFavorite}
-            >Add to favorites <FontAwesomeIcon icon={faHeart} className='icon'/></button>                    
+            >Add to favorites <FontAwesomeIcon icon={faHeart} className={styles['icon']}/></button>                    
         </div>  
     );
 };

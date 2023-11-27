@@ -5,6 +5,7 @@
             padding: 0;
             /* background-color: rgb(114, 113, 113); */
             background-color: #fddf59;
+
         }
 
         .app {
@@ -14,4 +15,5 @@
             margin: 0 auto;
             justify-content: center;
             align-items: center;
+            position: relative;
         }

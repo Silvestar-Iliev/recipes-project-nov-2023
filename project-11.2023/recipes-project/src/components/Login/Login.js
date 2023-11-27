@@ -1,34 +1,33 @@
+import styles from './Login.module.css';
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
-
-const LoginFormKeys = {
-    Email: 'email',
-    Password: 'password',
-};
+import { ErrorContainer } from '../common/ErrorContainer/ErrorContainer';
 
 
 export const Login = () => {
     const {onLoginSubmit} = useContext(AuthContext);
-    const {values, onChangeHandler, onSubmit} = useForm({
-        [LoginFormKeys.Email]: '',
-        [LoginFormKeys.Password]: '',
+    const {values, onChangeHandler, onSubmit, errorMessage} = useForm({
+        email: '',
+        password: '',
     }, onLoginSubmit);
 
     return(
-        <div className="login-form">
+        <>
+        {errorMessage && <ErrorContainer error={errorMessage} />}
+        <div className={styles["login-form"]}>
             <form method="POST" onSubmit={onSubmit}>
-                <h2 className="login-header">Login</h2>
+                <h2 className={styles["login-header"]}>Login</h2>
                     <label htmlFor="email">Email:</label>
                       <input 
                         type="email" 
                         id="email" 
-                        name={LoginFormKeys.Email}  
+                        name="email"  
                         placeholder="alex@gmail.com"
-                        value={values[LoginFormKeys.Email]}
+                        value={values.email}
                         onChange={onChangeHandler}
                       />
   
@@ -36,15 +35,16 @@ export const Login = () => {
                       <input 
                         type="password" 
                         id="login-password" 
-                        name={LoginFormKeys.Password}
-                        value={values[LoginFormKeys.Password]}
+                        name="password"
+                        value={values.password}
                         onChange={onChangeHandler}
                       />
-                      <input type="submit" className="btn submit" value="Login"/>
-                      <p className="field">
-                          <span>If you don't have profile click <Link className="link" to="/users/register">here</Link></span>
+                      <input type="submit" className={styles["btn submit"]} value="Login"/>
+                      <p className={styles["field"]}>
+                          <span>If you don't have profile click <Link className={styles["link"]} to="/users/register">here</Link></span>
                       </p>
             </form>
         </div>
+        </>
     );
 };

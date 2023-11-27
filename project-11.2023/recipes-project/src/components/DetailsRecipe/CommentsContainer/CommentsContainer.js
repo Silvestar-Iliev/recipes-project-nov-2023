@@ -1,3 +1,4 @@
+import styles from '../DetailsRecipe.module.css';
 import { useContext } from "react";
 import { useForm } from "../../../hooks/useForm";
 
@@ -15,18 +16,18 @@ export const CommentsContainer = ({
     }, onCreateCommentSubmit )
 
     return(
-        <div className="comments-container">
-            <div className="comment-section">
+        <div className={styles["comments-container"]}>
+            <div className={styles["comment-section"]}>
                 <h3>Comments:</h3>
                     {comments.map(x => (
-                    <div className="comment" key={x._id}>
+                    <div className={styles["comment"]} key={x._id}>
                         <p>{x.username || x.userEmail}: {x.comment}</p>
                     </div>
                     ))}
             </div>
 
             {isAuthenticated && 
-                <div className="comment-form">
+                <div className={styles["comment-form"]}>
                     <form method="POST" onSubmit={onSubmit}>
                         <textarea 
                             placeholder="Write your comment"
