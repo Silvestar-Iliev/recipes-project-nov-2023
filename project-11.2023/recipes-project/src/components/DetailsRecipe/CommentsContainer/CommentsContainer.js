@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { useForm } from "../../../hooks/useForm";
 
 import { AuthContext } from "../../../contexts/AuthContext";
+import { ErrorContainer } from '../../common/ErrorContainer/ErrorContainer'; 
+
 
 
 export const CommentsContainer = ({
@@ -11,7 +13,7 @@ export const CommentsContainer = ({
 }) => {
     const {isAuthenticated} = useContext(AuthContext);
 
-    const {values, onChangeHandler, onSubmit} = useForm({
+    const {values, onChangeHandler, onSubmit, errorMessage} = useForm({
         comment: '',
     }, onCreateCommentSubmit )
 
@@ -21,11 +23,11 @@ export const CommentsContainer = ({
                 <h3>Comments:</h3>
                     {comments.map(x => (
                     <div className={styles["comment"]} key={x._id}>
-                        <p>{x.username || x.userEmail}: {x.comment}</p>
+                        <div><span>{x.username || x.userEmail}: </span><p>{x.comment}</p></div>
                     </div>
                     ))}
             </div>
-
+            {errorMessage && <ErrorContainer error={errorMessage} />}            
             {isAuthenticated && 
                 <div className={styles["comment-form"]}>
                     <form method="POST" onSubmit={onSubmit}>
@@ -37,7 +39,7 @@ export const CommentsContainer = ({
                         ></textarea>
                         <input type="submit" value="Add Comment" />
                     </form>
-                </div>
+                </div>                
             }
         </div>
     );

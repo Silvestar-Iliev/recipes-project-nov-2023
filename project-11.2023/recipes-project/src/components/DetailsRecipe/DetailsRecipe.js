@@ -107,7 +107,7 @@ export const DetailsRecipe = () => {
                             <p>Carbohydrates: <span>{recipe.carbs}g</span></p>
                             <p>Fat: <span>{recipe.fat}g</span></p>
                         </div>
-                        <p>Description: {recipe.description}</p>
+                        <p>{recipe.description}</p>
                     </div>
                     <div className={styles["buttons"]}>
                         {isOwner && <EditDeleteButtons onDeleteClick={onDeleteClick} recipe={recipe} />}

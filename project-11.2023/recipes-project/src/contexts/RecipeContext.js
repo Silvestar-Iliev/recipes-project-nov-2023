@@ -7,7 +7,6 @@ import * as recipeService from "../services/recipeService";
 
 export const RecipeContext = createContext();
 
-
 export const RecipeProvider = ({
     children,
 }) => {
@@ -16,7 +15,6 @@ export const RecipeProvider = ({
 
     useEffect(() => {
         recipeService.getAll().then(res => { setRecipes(res) });
-        
     }, []);
 
 

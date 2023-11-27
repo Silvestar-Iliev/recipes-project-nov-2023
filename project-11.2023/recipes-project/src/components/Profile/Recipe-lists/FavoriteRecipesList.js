@@ -16,9 +16,9 @@ export const FavoritesRecipesList = ({
             <h3>Favorite recipes:</h3>
             <ul>
             {myFavorites
-                    .map(x => <div>
+                    .map(x => <div key={x._id}>
                               <Link 
-                                key={x._id} 
+                                 
                                 to={`/recipes/${x.recipeId}`}
                               >{x.title}
                               </Link>

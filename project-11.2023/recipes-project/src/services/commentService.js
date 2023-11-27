@@ -1,5 +1,6 @@
 import * as request from "./requester";
 
+
 let url = 'http://localhost:3030/data/comments';
 
 
@@ -13,7 +14,17 @@ export const getAll = async (recipeId) => {
 
 
 export const create = async (recipeId, comment, username, userEmail) => {
-    const result = await request.post(url, { recipeId, comment, username, userEmail });
+    try {
 
-    return result;
+        if(comment.length > 80){
+            throw new Error('Comment should be no longer than 80 characters.')
+        }
+
+        const result = await request.post(url, { recipeId, comment, username, userEmail });
+
+        return result;
+    } catch (error) {
+        throw error;
+    }
+
 };

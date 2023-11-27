@@ -1,12 +1,20 @@
 .error-container {
-    padding: 20px 30px;
-    margin-left: 400px;
-    background-color: red;
-    border-radius: 4px;
-    position: absolute;
+    position: fixed;
+    right: 50px;
+    display: block;
+    top: 15%;
+    text-align: center;
+    border-radius: 12px;
+    color: #c71414;
+    font-style: italic;
+    height: auto;
+    width: 380px;
+    box-shadow: 0px 0px 8px 7px #c71414;
+    background-color: aliceblue;
 }
 
-.error-container p{
-    color: white;
+.error-container p {
     font-size: medium;
+    font-weight: bold;
 }
+    

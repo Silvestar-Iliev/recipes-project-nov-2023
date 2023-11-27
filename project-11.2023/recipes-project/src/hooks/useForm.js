@@ -18,7 +18,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
             await onSubmitHandler(values); 
             setValues(initialValues);
-
+            setErrorMessage('');
         } catch (error) {
             setErrorMessage(error.message);
         }
