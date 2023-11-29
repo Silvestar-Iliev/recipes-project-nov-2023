@@ -24,7 +24,7 @@ export const getLastThree = async () => {
 
     const data = await request.get(`${url}?sortBy=${query}`);
     const result = data.slice(0, 3);
-    console.log(result);
+   
     return result;
 };
 

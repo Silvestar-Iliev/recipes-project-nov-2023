@@ -14,7 +14,7 @@ export const RecipeCatalog = () => {
     useEffect(() => {
         
         likeService.getAll().then(res => {
-     
+            
             const finalRes = [];
             res?.forEach(([id, likes]) => {
                 const data = recipes.find(x => x._id === id);
@@ -23,7 +23,6 @@ export const RecipeCatalog = () => {
                    data.likes = likes; 
                    finalRes.push(data);
                 } 
-                
             });
 
             return finalRes;

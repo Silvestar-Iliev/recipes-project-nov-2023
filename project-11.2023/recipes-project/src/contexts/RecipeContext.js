@@ -17,7 +17,10 @@ export const RecipeProvider = ({
     
 
     useEffect(() => { 
-        recipeService.getAll().then(res => { setRecipes(res) });
+        recipeService.getAll().then(res => { 
+            const result = res.map(x => ({...x, likes:0}))
+            setRecipes(result);
+        });
         recipeService.getLastThree().then(res => { setLastRecipes(res) });
     }, []);
     
