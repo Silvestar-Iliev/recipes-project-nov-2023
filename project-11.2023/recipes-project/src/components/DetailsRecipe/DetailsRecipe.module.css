@@ -39,9 +39,9 @@
         }
 
         .recipe-details img{
-            width: 100%;
+            width: 500px;
             border-radius: 5px;
-            height: 60%;
+            height: 400px;
         }
 
         .recipe-details h2 {

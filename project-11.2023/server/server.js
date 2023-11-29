@@ -1333,33 +1333,42 @@
         }
     };
     var seedData = {
-        games: {
+        recipes: {
             "ff436770-76c5-40e2-b231-77409eda7a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "CoverFire",
-                "category": "Action",
-                "maxLevel": "70",
-                "imageUrl": "/images/CoverFire.png",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
-                "_createdOn": 1617194128618,
+                "title": "Сметанова торта",
+                "description": "Сметанова торта с уиски и бисквити.",
+                "imageUrl": "https://didys.bg/wp-content/uploads/2022/02/img_6800.jpg",
+                "calories": "270",
+                "protein": "13",
+                "carbs": "50",
+                "fat": "25",
+                "_createdOn": 1701263150264,
+                "_id": "4bb1a1d0-e8b7-4810-ade7-ea94c593ebfd"
             },
             "1840a313-225c-416a-817a-9954d4609f7c": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "MineCraft",
-                "category": "Arcade",
-                "maxLevel": "250",
-                "imageUrl": "/images/MineCraft.png",
-                "summary": "Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.",
-                "_createdOn": 1617194210928,
+                "title": "Брауни",
+                "description": "Шоколадово брауни с лешници.",
+                "imageUrl": "https://m.1001recepti.com/images/photos/recipes/size_5/sladkish-brauni-s-kafe-i-shokolad-c35b3d7c4f8986e249ef47f2ea2df6b9-[108914].jpg",
+                "calories": "240",
+                "protein": "13",
+                "carbs": "46",
+                "fat": "25",
+                "_createdOn": 1701263357790,
+                "_id": "c17f24dc-c107-4602-8855-cf7d6612c225"
             },
             "126777f5-3277-42ad-b874-76d043b069cb": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "title": "Zombie Lang",
-                "category": "Vertical Shooter",
-                "maxLevel": "100",
-                "imageUrl": "/images/ZombieLang.png",
-                "summary": "With it’s own unique story, set between the events of the first movie, Zombieland: Double Tap- Road Trip is a ridiculously fun top-down twin-stick shooter featuring local co-op multiplayer for up to four players. Play as your favorite heroes from the original — Tallahassee, Columbus, Wichita and Little Rock — as well as new unlockable characters from the upcoming sequel.  The game embraces the game-like elements seen in the film by  incorporating everything from the “Rules” to “Zombie Kill of the Week”.  Use your special abilities, an arsenal of weapons and the essential Zombieland rules for survival to stay alive against huge numbers of uniquely grotesque and dangerous undead monstrosities in Zombieland: Double Tap- Road Trip’s story-based campaign mode, wave-based horde mode, and boss battles.",
-                "_createdOn": 1617194295474,
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Гофрети с банани.",
+                "description": "Гофрети с шоколадов сироп и банани.",
+                "imageUrl": "https://m.1001recepti.com/images/photos/recipes/size_5/-ddcdfaa3bcc7474d805c954ce334894e-[107654].jpg",
+                "calories": "200",
+                "protein": "15",
+                "carbs": "35",
+                "fat": "15",
+                "_createdOn": 1701263592717,
+                "_id": "7d2b9ce5-7374-4e55-bce9-ca0b3b278237"
             }
         },
         comments: {
