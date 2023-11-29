@@ -10,7 +10,11 @@ export const MyRecipesList = ({
             <h3>My recipes:</h3>
             <ul>
                 {myRecipes
-                    .map(x => <Link key={x._id} to={`/recipes/${x._id}`}>{x.title}</Link>)}
+                    .map(x => <Link key={x._id} to={`/recipes/${x._id}`}>
+                                <img className={styles["my-recipes-list-img"]} 
+                                src={x.imageUrl} 
+                                alt={x.title} />
+                                {x.title}</Link>)}
             </ul>
         </div>
     );

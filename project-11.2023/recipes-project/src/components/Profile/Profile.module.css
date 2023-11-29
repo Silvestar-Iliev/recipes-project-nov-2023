@@ -53,11 +53,20 @@
             padding: 3px;
             font-weight: 600;
             width: 260px;
+            display: flex;
+            align-items: center;
         }
 
         .my-recipes-list a:hover,
         .favorite-recipes-list div:hover {
             background-color: #45a049;
+        }
+
+        .my-recipes-list-img{
+            width: 25px;
+            height: 25px;
+            margin-right: 20px;
+            border-radius: 4px;
         }
 
 
@@ -67,8 +76,14 @@
             justify-content: space-between;
             margin: 5px;
             cursor: pointer;
+            align-items: center;
         }
         
+        /* .favorite-recipes-list div a {
+            display: flex;
+            align-items: center;
+        } */
+
         .favorites-list-buttons {
             display: flex;
             gap: 20px;
@@ -85,6 +100,13 @@
             cursor: pointer;
             background-color: #333;
             color: white;
+        }
+
+        .favorites-list-img{
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+            border-radius: 4px;
         }
 
 

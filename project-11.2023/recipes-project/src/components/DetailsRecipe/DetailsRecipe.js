@@ -82,7 +82,8 @@ export const DetailsRecipe = () => {
                                                         recipe.calories,
                                                         recipe.protein, 
                                                         recipe.carbs, 
-                                                        recipe.fat);
+                                                        recipe.fat,
+                                                        recipe.imageUrl);
         
         setRecipe(state => ({...state, favorites: res}));
     };

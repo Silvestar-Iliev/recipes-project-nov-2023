@@ -18,9 +18,11 @@ export const FavoritesRecipesList = ({
             {myFavorites
                     .map(x => <div key={x._id}>
                               <Link 
-                                 
                                 to={`/recipes/${x.recipeId}`}
-                              >{x.title}
+                              ><img className={styles["favorites-list-img"]} 
+                                    src={x.imageUrl} 
+                                    alt={x.title} /> 
+                                {x.title}
                               </Link>
                                 <div className={styles["favorites-list-buttons"]}>
                                     <button 

@@ -12,16 +12,16 @@ export const getFavorites = async(recipeId) => {
 };
 
 
-export const addToFavorites = async(userId, recipeId, title, calories, protein, carbs, fat) =>  {
+export const addToFavorites = async(userId, recipeId, title, calories, protein, carbs, fat, imageUrl) =>  {
     let checked = false;
-    await request.post(url, {userId, recipeId, title, calories, protein, carbs, fat, checked});
+    await request.post(url, {userId, recipeId, title, calories, protein, carbs, fat, imageUrl, checked});
 
     return getFavorites(recipeId);
 }; 
 
 export const getAllForUser = async (userId) => {
     const query = encodeURIComponent(`_ownerId="${userId}"`);
-
+    
     const result = await request.get(`${url}?where=${query}`);
     
     return result;
