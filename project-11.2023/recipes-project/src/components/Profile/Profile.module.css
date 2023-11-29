@@ -6,6 +6,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         /* user info */
@@ -157,4 +158,23 @@
         .result-calc p {
             font-weight: 600;
             line-height: 0.5;
+        }
+
+        .result-modal{
+            position: fixed;
+            top: 200px;
+            left: 370px;
+            background-color: #807f7f;
+            width: 800px;
+        }
+
+        .result-modal button{
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            background-color: red;
+            color: white;
+            border-radius: 6px;
+            margin: 5px 5px 5px 90%;
+
         }

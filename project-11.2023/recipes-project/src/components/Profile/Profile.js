@@ -15,6 +15,7 @@ export const Profile = () => {
     const [myRecipes, setMyRecipes] = useState([]);
     const [myFavorites, setMyFavorites] = useState([]);
     const [macros, setMacros] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(true);
 
  
     useEffect(() => {
@@ -77,7 +78,17 @@ export const Profile = () => {
 
         
         setMacros(calcChecked);
+        openModal();
     };
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+    
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
 
     return(
         <div className={styles["profile-container"]}>
@@ -96,7 +107,7 @@ export const Profile = () => {
                     onCalculateCheckClick={onCalculateCheckClick}
                 />
             </div>
-            {macros && <ResultCalc macros={macros}/>}     
+            {macros && <ResultCalc macros={macros} isOpen={isModalOpen} onClose={closeModal} />}     
         </div>
     );
 };
