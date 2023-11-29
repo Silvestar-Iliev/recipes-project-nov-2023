@@ -24,7 +24,7 @@
     background-image: url('https://cdn.pixabay.com/photo/2017/06/01/18/46/cook-2364221_1280.jpg'); 
     background-size: cover;
     background-position: center;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
 
 /* Card - recipe */
@@ -59,6 +59,13 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
+}
+
+.recipe-card span {
+    align-self: center;
+    color: #4CAF49;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .recipe-card:hover {

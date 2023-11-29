@@ -19,11 +19,20 @@
 
 .hero-text h1 {
     font-size: 48px;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .hero-text p {
     font-size: 24px;
+}
+
+.recipes-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 80px;
 }
 
 @media (width >= 1700px) {

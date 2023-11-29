@@ -7,7 +7,7 @@ export const getLikes = async(recipeId) => {
 
     const result = await request.get(`${url}?select=_ownerId&where=${query}`) 
         .then(res => res.map(x => x._ownerId));
-
+    
     return result;
 };
 
@@ -16,6 +16,26 @@ export const addLike = async(userId, recipeId) =>  {
 
     return getLikes(recipeId);
 }; 
+
+export const getAll = async () => {
+    const result = await request.get(url)
+        .then(res => res.map(x => x.recipeId))
+        .then(res => { 
+                const currData = {};
+    
+                res.forEach(x => { 
+                    currData[x] = (currData[x] || 0) + 1;  
+                });
+    
+                const sortedLikes = Object.entries(currData)
+                                                      .sort((a, b) => b[1] - a[1]);
+                        
+                return sortedLikes;
+             });
+
+
+    return result;
+};
 
 
 

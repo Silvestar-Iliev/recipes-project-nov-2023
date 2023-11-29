@@ -2,21 +2,26 @@ import { createContext } from "react";
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
-
 import * as recipeService from "../services/recipeService";
 
+
 export const RecipeContext = createContext();
+
 
 export const RecipeProvider = ({
     children,
 }) => {
     const navigate = useNavigate();
     const [recipes, setRecipes] = useState([]);
+    const [lastRecipes, setLastRecipes] = useState([]);
+    
 
-    useEffect(() => {
+    useEffect(() => { 
         recipeService.getAll().then(res => { setRecipes(res) });
+        recipeService.getLastThree().then(res => { setLastRecipes(res) });
     }, []);
-
+    
+    
 
     const onCreateRecipeSubmit = async (data) => {
 
@@ -24,7 +29,6 @@ export const RecipeProvider = ({
             const newRecipe = await recipeService.create( data ); 
 
             setRecipes(state => [...state, newRecipe])
-
 
             navigate('/recipes');            
         } catch (error) {
@@ -68,11 +72,13 @@ export const RecipeProvider = ({
     };
 
     const context = {
-        recipes,
+        recipes,  
+        lastRecipes,   
         onCreateRecipeSubmit,
         onEditSubmitHandler,
         onDeleteClick,
         getRecipe,
+ 
     };
 
     return (

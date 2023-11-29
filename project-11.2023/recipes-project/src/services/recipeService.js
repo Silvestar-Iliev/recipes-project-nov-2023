@@ -18,13 +18,16 @@ export const getOne = async (recipeId) => {
     return data;
 };
 
+
 export const getLastThree = async () => {
     const query = encodeURIComponent(`_createdOn desc`);
 
-    const result = await request.get(`${url}?sortBy=${query}`)
-    
+    const data = await request.get(`${url}?sortBy=${query}`);
+    const result = data.slice(0, 3);
     console.log(result);
+    return result;
 };
+
 
 export const getAllForUser = async (userId) => {
     const query = encodeURIComponent(`_ownerId="${userId}"`);

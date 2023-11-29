@@ -45,7 +45,7 @@ export const DetailsRecipe = () => {
             .then(res => {
                 setRecipe(state => ({...state, favorites: res}));
             });
-            
+        
     }, [recipeId]);
 
     // add comment
