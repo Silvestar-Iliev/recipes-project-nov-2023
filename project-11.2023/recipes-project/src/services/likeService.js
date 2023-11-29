@@ -18,23 +18,32 @@ export const addLike = async(userId, recipeId) =>  {
 }; 
 
 export const getAll = async () => {
-    const result = await request.get(url)
-        .then(res => res.map(x => x.recipeId))
-        .then(res => { 
-                const currData = {};
-    
-                res.forEach(x => { 
-                    currData[x] = (currData[x] || 0) + 1;  
+
+    try {
+        const result = await request.get(url)
+            .then(res => res.map(x => x.recipeId))
+            .then(res => { 
+                    const currData = {};
+        
+                    res.forEach(x => { 
+                        currData[x] = (currData[x] || 0) + 1;  
+                    });
+        
+                    const sortedLikes = Object.entries(currData)
+                                                        .sort((a, b) => b[1] - a[1]);
+                            
+                    return sortedLikes;
                 });
-    
-                const sortedLikes = Object.entries(currData)
-                                                      .sort((a, b) => b[1] - a[1]);
-                        
-                return sortedLikes;
-             });
 
+        if (result.length === 0) {
+            throw new Error('No likes yet.')
+        }
+      
+        return result;        
+    } catch (error) {
+        console.log(error.message);
+    }
 
-    return result;
 };
 
 

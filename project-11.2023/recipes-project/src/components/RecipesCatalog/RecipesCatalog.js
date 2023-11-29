@@ -16,19 +16,18 @@ export const RecipeCatalog = () => {
         likeService.getAll().then(res => {
      
             const finalRes = [];
-            res.forEach(([id, likes]) => {
+            res?.forEach(([id, likes]) => {
                 const data = recipes.find(x => x._id === id);
-
+                
                 if(data){
                    data.likes = likes; 
                    finalRes.push(data);
-                };
+                } 
                 
             });
 
             return finalRes;
         }).then(res => setState([...res]));
-
         
     }, [])
 

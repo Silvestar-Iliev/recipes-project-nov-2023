@@ -17,7 +17,7 @@ export const Home = () => {
         likeService.getAll().then(res => {
      
             const finalRes = [];
-            res.forEach(([id, likes]) => {
+            res?.forEach(([id, likes]) => {
                 const data = lastRecipes.find(x => x._id === id);
 
                 if(data){
