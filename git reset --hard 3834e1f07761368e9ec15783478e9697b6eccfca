@@ -1,0 +1,113 @@
+[33mcommit 1f2c335c7cd85f71004d859ff753c015b97b86a5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Silvestar-Iliev <stivigerardd@gmail.com>
+Date:   Wed Nov 29 20:24:39 2023 +0200
+
+    remove update
+
+[33mcommit f397ace9134bbc3fd7c1cf64300ba629a7dda4e3[m
+Author: Silvestar-Iliev <stivigerardd@gmail.com>
+Date:   Wed Nov 29 15:46:27 2023 +0200
+
+    Update server.js
+
+[33mcommit 3834e1f07761368e9ec15783478e9697b6eccfca[m
+Author: Silvestar-Iliev <stivigerardd@gmail.com>
+Date:   Wed Nov 29 15:33:51 2023 +0200
+
+    add default recipes in the server
+
+[33mcommit 2562e1bd521a73264b4cfb25c4e2865c7ef81cb7[m
+Author: Silvestar-Iliev <stivigerardd@gmail.com>
+Date:   Wed Nov 29 14:43:58 2023 +0200
+
+    add watching likes and sorting by likes in Catalog page, add sorting by last added recipes in Home page
+
+[33mcommit 5ec31623115cc030515db29a32dd8ca331b0f4a3[m
+Author: Silvestar-Iliev <stivigerardd@gmail.com>
+Date:   Mon Nov 27 21:43:06 2023 +0200
+
+    add styles for error container, add validation length for  recipe-title, recipe-description and comments
+
+[33mcommit 8a6f8c4db2bb364e70474e9f8019cb3c464b3512[m
+Author: Silvestar-Iliev <stivigerardd@gmail.com>
+Date:   Mon Nov 27 13:16:32 2023 +0200
+
+    Create .gitignore
+
+[33mcommit eab9ad122bf8d0e430e25755e812afa7c40bc0c3[m
+Author: Silvestar-Iliev <stivigerardd@gmail.com>
+Date:   Mon Nov 27 13:16:14 2023 +0200
+
+    add route guards, add error handling
+
+[33mcommit 92bf25fc8ae9bf3b810cfdf72bdc7b034ac4d49e[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Fri Nov 17 10:24:18 2023 +0200
+
+    Add files via upload
+
+[33mcommit 64ce456510003e885ba2e86d6a79b51d2e9697d9[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Fri Nov 17 10:23:07 2023 +0200
+
+    Delete project-11.2023 directory
+
+[33mcommit 520adbe7252c3409029a9c7685fa0a8e54e89402[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Fri Nov 17 09:50:25 2023 +0200
+
+    Add files via upload
+
+[33mcommit ce218e288096ffc8a3c02db079e8c481d5e8a512[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Fri Nov 17 09:48:32 2023 +0200
+
+    Delete project 11.2023 directory
+
+[33mcommit e7f5b8c47a57d500c7093c6099578c4bffd44e93[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Thu Nov 16 17:25:21 2023 +0200
+
+    Update README.md
+
+[33mcommit 7e62499923a86d08ea4e818d0dd37bc329509982[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Thu Nov 16 17:23:12 2023 +0200
+
+    Add files via upload
+
+[33mcommit 74f1a8656469b7db816944728c5acf2e8641bbae[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Thu Nov 16 17:12:59 2023 +0200
+
+    Update README.md
+
+[33mcommit d918e2b1bde8c6177486f5ddc65ea0c6e1e905cf[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Thu Nov 16 17:10:59 2023 +0200
+
+    Update README.md
+
+[33mcommit dccfca7991af6ec37371b713c4aa4d6a3d6cc6a1[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Thu Nov 16 17:10:14 2023 +0200
+
+    Update README.md
+
+[33mcommit 202f48b808ee971ac53093e2f7cefaf9dfd5822d[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Thu Nov 16 17:08:12 2023 +0200
+
+    Update README.md
+
+[33mcommit 71c2339d1a22a94e32a9ad5d8e70358492441c98[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Thu Nov 16 15:53:16 2023 +0200
+
+    Update README.md
+
+[33mcommit bfc492f7b66c24bbe4aaf68907c4184beedebdf3[m
+Author: Silvestar-Iliev <121850417+Silvestar-Iliev@users.noreply.github.com>
+Date:   Thu Nov 16 15:52:28 2023 +0200
+
+    Initial commit
