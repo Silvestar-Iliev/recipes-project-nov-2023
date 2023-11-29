@@ -1369,7 +1369,19 @@
                 "fat": "15",
                 "_createdOn": 1701263592717,
                 "_id": "7d2b9ce5-7374-4e55-bce9-ca0b3b278237"
-            }
+            },
+            "126777f5-3277-42ad-b874-76d043b069c1":     {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "title": "Крем брюле.",
+                "description": "Крем брюле с касис.",
+                "imageUrl": "https://img.haskovo.net/uploads/recipes/2015/04/02/11764.jpg",
+                "calories": "220",
+                "protein": "16",
+                "carbs": "39",
+                "fat": "22",
+                "_createdOn": 1701265204643,
+                "_id": "c6c1a502-7425-4e8b-bafb-762cefa7b4ca"
+            },
         },
         comments: {
         
