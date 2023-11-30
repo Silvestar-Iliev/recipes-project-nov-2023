@@ -1,7 +1,7 @@
 import styles from '../DetailsRecipe.module.css';
 import { useContext } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faFilePen } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { useForm } from "../../../hooks/useForm";
 
@@ -27,13 +27,13 @@ export const CommentsContainer = ({
                 <h3>Comments:</h3>
                     {comments.map(x => (
                     <div className={styles["comment"]} key={x._id}>
-                        <div>
-                            <span>{x.username || x.userEmail}: </span>
-                            <button onClick={() => onDeleteCommentClick(x._id)}>
-                                <FontAwesomeIcon icon={faTrash} className={styles["icon"]}/>
-                            </button>
+                            <div className={styles['comment-user-btn']}>
+                                <span>{x.username || x.userEmail}: </span>
+                                <button onClick={() => onDeleteCommentClick(x._id)}>
+                                    <FontAwesomeIcon icon={faTrash} className={styles["icon"]}/>
+                                </button>
+                            </div>
                             <p>{x.comment}</p>
-                        </div>
                     </div>
                     ))}
             </div>

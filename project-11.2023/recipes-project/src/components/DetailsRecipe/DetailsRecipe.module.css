@@ -149,10 +149,29 @@
         .comment {
             margin-bottom: 10px;
             border-radius: 10px;
-            padding: 5px;
+            padding: 10px;
             background-color: white;
             display: flex;
             flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .comment-user-btn{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .comment button {
+            background-color: #333;
+            color: white;
+            border-radius: 6px;
+            padding: 2px 4px;
+        }
+
+        .comment button:hover{
+            cursor: pointer;
+            background-color: white;
+            color: #333;
         }
 
         .comment span {
