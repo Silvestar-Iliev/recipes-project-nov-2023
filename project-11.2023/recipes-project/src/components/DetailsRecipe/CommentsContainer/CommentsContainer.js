@@ -1,5 +1,8 @@
 import styles from '../DetailsRecipe.module.css';
 import { useContext } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faFilePen } from '@fortawesome/free-solid-svg-icons';
+
 import { useForm } from "../../../hooks/useForm";
 
 import { AuthContext } from "../../../contexts/AuthContext";

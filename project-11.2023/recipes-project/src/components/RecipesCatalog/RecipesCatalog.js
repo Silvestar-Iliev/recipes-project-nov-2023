@@ -35,7 +35,9 @@ export const RecipeCatalog = () => {
         <section className={styles["recipes-catalog"]}>
             <h2 className={styles["catalog-heading"]}>All recipes for you:</h2>
             <div className={styles["recipes-list"]}>
-                {recipes.sort((a, b) => b.likes - a.likes).map(recipe => <RecipeCard key={recipe._id} recipe={recipe}/>)}
+                {recipes
+                    .sort((a, b) => b.likes - a.likes)
+                    .map(recipe => <RecipeCard key={recipe._id} recipe={recipe}/>)}
             </div>
         </section>        
     );
