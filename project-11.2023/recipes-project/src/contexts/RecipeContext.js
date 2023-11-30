@@ -13,7 +13,6 @@ export const RecipeProvider = ({
 }) => {
     const navigate = useNavigate();
     const [recipes, setRecipes] = useState([]);
-    const [lastRecipes, setLastRecipes] = useState([]);
     
 
     useEffect(() => { 
@@ -21,7 +20,7 @@ export const RecipeProvider = ({
             const result = res.map(x => ({...x, likes:0}))
             setRecipes(result);
         });
-        recipeService.getLastThree().then(res => { setLastRecipes(res) });
+        
     }, []);
     
     
@@ -75,8 +74,7 @@ export const RecipeProvider = ({
     };
 
     const context = {
-        recipes,  
-        lastRecipes,   
+        recipes,   
         onCreateRecipeSubmit,
         onEditSubmitHandler,
         onDeleteClick,

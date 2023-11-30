@@ -1,14 +1,15 @@
 import styles from './Home.module.css';
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import * as likeService from '../../services/likeService';
+import * as recipeService from '../../services/recipeService';
 
-import { RecipeContext } from "../../contexts/RecipeContext";
+
 import { RecipeCard } from "../RecipesCatalog/RecipeCard/RecipeCard";
 
 export const Home = () => {
-    const { lastRecipes } = useContext(RecipeContext);
+    const [lastRecipes, setLastRecipes] = useState([]);
     const [state, setState] = useState([]);
 
     
@@ -30,6 +31,7 @@ export const Home = () => {
             return finalRes;
         }).then(res => setState([...res]));
 
+        recipeService.getLastThree().then(res => { setLastRecipes(res) });
         
     }, [])
 
