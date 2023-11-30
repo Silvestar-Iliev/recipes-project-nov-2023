@@ -28,3 +28,10 @@ export const create = async (recipeId, comment, username, userEmail) => {
     }
 
 };
+
+
+export const del = async(recipeId) => {
+    const result = await request.del(`${url}/${recipeId}`);
+
+    return result;
+};

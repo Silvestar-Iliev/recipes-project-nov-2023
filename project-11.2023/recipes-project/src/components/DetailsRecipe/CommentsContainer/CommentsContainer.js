@@ -13,6 +13,7 @@ import { ErrorContainer } from '../../common/ErrorContainer/ErrorContainer';
 export const CommentsContainer = ({
     comments,
     onCreateCommentSubmit,
+    onDeleteCommentClick,
 }) => {
     const {isAuthenticated} = useContext(AuthContext);
 
@@ -26,7 +27,13 @@ export const CommentsContainer = ({
                 <h3>Comments:</h3>
                     {comments.map(x => (
                     <div className={styles["comment"]} key={x._id}>
-                        <div><span>{x.username || x.userEmail}: </span><p>{x.comment}</p></div>
+                        <div>
+                            <span>{x.username || x.userEmail}: </span>
+                            <button onClick={() => onDeleteCommentClick(x._id)}>
+                                <FontAwesomeIcon icon={faTrash} className={styles["icon"]}/>
+                            </button>
+                            <p>{x.comment}</p>
+                        </div>
                     </div>
                     ))}
             </div>

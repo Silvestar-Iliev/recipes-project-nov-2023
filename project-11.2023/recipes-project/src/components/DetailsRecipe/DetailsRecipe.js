@@ -55,6 +55,14 @@ export const DetailsRecipe = () => {
         setComments(state => [...state, newComment]);
     };
 
+    // delete comment
+
+    const onDeleteCommentClick = async (commentId) => {
+        await commentService.del(commentId);
+
+        setComments(state => state.filter(x => x._id !== commentId)); 
+    }
+
     //add like
     const addLikeClick = async() => {
 
@@ -123,7 +131,11 @@ export const DetailsRecipe = () => {
                         }  
                     </div>
             </div>
-            <CommentsContainer comments={comments} onCreateCommentSubmit={onCreateCommentSubmit} />
+            <CommentsContainer 
+                comments={comments} 
+                onCreateCommentSubmit={onCreateCommentSubmit} 
+                onDeleteCommentClick={onDeleteCommentClick}
+            />
         </div>
     );
 };
