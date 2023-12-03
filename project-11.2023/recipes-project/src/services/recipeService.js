@@ -49,7 +49,7 @@ export const create = async (data) => {
     }       
 
     if (data.calories < 0 || data.protein < 0 || data.carbs < 0 || data.fat < 0) {
-        throw new Error('Мacronutrients should be a positive numbers.');
+        throw new Error('Мacronutrients should be a positive numbers or 0.');
     }   
 
     const result = await request.post( url, data );
@@ -74,7 +74,7 @@ export const edit = async(recipeId, data) => {
     }       
 
     if (data.calories < 0 || data.protein < 0 || data.carbs < 0 || data.fat < 0) {
-        throw new Error('Мacronutrients should be a positive numbers.');
+        throw new Error('Мacronutrients should be a positive numbers or 0.');
     }   
 
 
