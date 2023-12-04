@@ -18,6 +18,7 @@ export const CreateRecipe = () => {
         protein: 0,
         carbs: 0,
         fat: 0,
+        likes: 0,
     }, onCreateRecipeSubmit);
 
     
