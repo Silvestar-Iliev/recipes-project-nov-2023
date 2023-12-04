@@ -15,6 +15,7 @@ import { RecipeContext } from "../../contexts/RecipeContext";
 import { CommentsContainer } from "./CommentsContainer/CommentsContainer";
 import { EditDeleteButtons } from "./EditDeleteButtons/EditDeleteButtons";
 import { LikeButtons } from "./LikeButtons/LikeButtons";
+import { NotFound } from "../Home/NotFound";
 
 export const DetailsRecipe = () => {
     const { onDeleteClick } = useContext(RecipeContext);
@@ -22,30 +23,45 @@ export const DetailsRecipe = () => {
     const {recipeId} = useParams();
     const [recipe, setRecipe] = useState({});
     const [comments, setComments] = useState([]);
+    const [invalidRecipeId, setInvalidRecipeId] = useState(false);
     const {userId, isAuthenticated, userEmail, username} = useContext(AuthContext);
+    
     
 
     useEffect(() => {
-        recipeService.getOne(recipeId)
-            .then(res => {
-                setRecipe(res);
-            });
-            
-        commentService.getAll(recipeId)
-            .then(res => {
-                setComments(res);
-            });
-
-        likeService.getLikes(recipeId)
-            .then(res => {  
-                setRecipe(state => ({...state, likes: res}));
-            });    
-            
-        favoriteService.getFavorites(recipeId)
-            .then(res => {
-                setRecipe(state => ({...state, favorites: res}));
-            });
+        const getData = async () => {
+            try {
+                await recipeService.getOne(recipeId)
+                    .then(res => {
+                        setRecipe(res);
+                    });     
+                    
+                await commentService.getAll(recipeId)
+                    .then(res => {
+                        setComments(res);
+                    });
         
+                await likeService.getLikes(recipeId)
+                    .then(res => {  
+                        setRecipe(state => ({...state, likes: res}));
+                    });    
+                    
+                await favoriteService.getFavorites(recipeId)
+                    .then(res => {
+                        setRecipe(state => ({...state, favorites: res}));
+                    });  
+
+
+            } catch (error) {
+                if(error === 'Invalid recipe ID'){
+                    setInvalidRecipeId(true);
+                }
+                
+            }            
+        }
+
+        getData();
+    
     }, [recipeId]);
 
     // add comment
@@ -104,7 +120,10 @@ export const DetailsRecipe = () => {
 
     
     return(
-        <div className={styles["details-container"]}>
+        <>
+        {invalidRecipeId 
+            ? <NotFound /> 
+            : (<div className={styles["details-container"]}>
             <div className={styles["recipe-info"]}>
                     <div className={styles["recipe-details"]}>
                         <img src={recipe.imageUrl} alt={recipe.title} />
@@ -136,6 +155,8 @@ export const DetailsRecipe = () => {
                 onCreateCommentSubmit={onCreateCommentSubmit} 
                 onDeleteCommentClick={onDeleteCommentClick}
             />
-        </div>
+        </div>)
+        } 
+        </>
     );
 };
