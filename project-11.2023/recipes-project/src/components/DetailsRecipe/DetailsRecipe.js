@@ -35,6 +35,21 @@ export const DetailsRecipe = () => {
                         setRecipe(res);
                     });
 
+                await commentService.getAll(recipeId)
+                    .then(res => {
+                        setComments(res);
+                    });
+        
+                await likeService.getLikes(recipeId)
+                    .then(res => {  
+                        setRecipe(state => ({...state, likes: res}));
+                    });    
+                    
+                await favoriteService.getFavorites(recipeId)
+                    .then(res => {
+                        setRecipe(state => ({...state, favorites: res}));
+                    });
+
                 
             }catch(error){
                 if(error === 'Invalid recipe ID'){
@@ -44,25 +59,12 @@ export const DetailsRecipe = () => {
         }
 
             
-        commentService.getAll(recipeId)
-            .then(res => {
-                setComments(res);
-            });
 
-        likeService.getLikes(recipeId)
-            .then(res => {  
-                setRecipe(state => ({...state, likes: res}));
-            });    
-            
-        favoriteService.getFavorites(recipeId)
-            .then(res => {
-                setRecipe(state => ({...state, favorites: res}));
-            });
 
         getData();
         
     }, [recipeId]);
-
+    console.log(recipe);
     // add comment
     const onCreateCommentSubmit = async (values) => {
         const newComment = await commentService.create(recipeId, values.comment, username, userEmail);

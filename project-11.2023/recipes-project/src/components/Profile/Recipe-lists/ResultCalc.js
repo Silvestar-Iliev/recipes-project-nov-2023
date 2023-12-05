@@ -13,7 +13,7 @@ export const ResultCalc = ({
         <div className={styles["result-modal"]}>
             <button onClick={onClose}>X</button>
             <div className={styles["result-calc"]} >
-                <h3>x 100g: {macros.title.map(x => x + '; ')}</h3>
+                <h3><span>x 100g:</span> {macros.title.map(x => x + '; ')}</h3>
                 <span>Total:</span>
                 <p>Calories: <span>{macros.calories}</span></p>
                 <p>Protein: <span>{macros.protein}</span></p>

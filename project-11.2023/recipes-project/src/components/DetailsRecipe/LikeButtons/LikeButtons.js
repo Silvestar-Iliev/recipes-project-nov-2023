@@ -18,7 +18,7 @@ export const LikeButtons = ({
                     onClick={addLikeClick} 
                     disabled={isLiker}
                 >Like <FontAwesomeIcon icon={faThumbsUp} className={styles['icon']}/></button>
-                <p>Likes:<span> {likes}</span></p>
+                <p>Likes:<span> {likes || 0}</span></p>
             </div>
             <button 
                 onClick={addToFavoritesClick}
