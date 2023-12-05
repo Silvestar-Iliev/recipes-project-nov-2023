@@ -15,12 +15,13 @@ export const CommentsContainer = ({
     onCreateCommentSubmit,
     onDeleteCommentClick,
 }) => {
-    const {isAuthenticated} = useContext(AuthContext);
+    const {isAuthenticated, userId} = useContext(AuthContext);
 
     const {values, onChangeHandler, onSubmit, errorMessage} = useForm({
         comment: '',
     }, onCreateCommentSubmit )
 
+    
     return(
         <div className={styles["comments-container"]}>
             <div className={styles["comment-section"]}>
@@ -29,9 +30,11 @@ export const CommentsContainer = ({
                     <div className={styles["comment"]} key={x._id}>
                             <div className={styles['comment-user-btn']}>
                                 <span>{x.username || x.userEmail}: </span>
-                                <button onClick={() => onDeleteCommentClick(x._id)}>
-                                    <FontAwesomeIcon icon={faTrash} className={styles["icon"]}/>
-                                </button>
+                                {x._ownerId === userId 
+                                    ? ( <button onClick={() => onDeleteCommentClick(x._id)}>
+                                        <FontAwesomeIcon icon={faTrash} className={styles["icon"]}/>
+                                    </button>) : null}
+
                             </div>
                             <p>{x.comment}</p>
                     </div>
