@@ -64,7 +64,7 @@ export const DetailsRecipe = () => {
         getData();
         
     }, [recipeId]);
-    console.log(recipe);
+    
     // add comment
     const onCreateCommentSubmit = async (values) => {
         const newComment = await commentService.create(recipeId, values.comment, username, userEmail);

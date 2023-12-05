@@ -13,21 +13,20 @@ export const RecipeCatalog = () => {
     
     useEffect(() => {
         
-        likeService.getAll().then(res => {
-            
-            const finalRes = [];
-            res?.forEach(([id, likes]) => {
-                const data = recipes.find(x => x._id === id);
-                
-                if(data){
-                   data.likes = likes; 
-                   finalRes.push(data);
-                } 
-            });
+        likeService.getAll()
+            .then(res => {
 
-            return finalRes;
-        }).then(res => setState([...res]));
-        console.log(recipes);
+                res?.forEach(([id, likes]) => {
+                    const data = recipes.find(x => x._id === id);
+
+                    if(data){
+                        data.likes = likes; 
+                        setState(state => [...state, data])
+                    };
+                    
+                });
+            })
+        
     }, [])
 
 
