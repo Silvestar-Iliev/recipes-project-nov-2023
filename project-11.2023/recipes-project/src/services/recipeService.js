@@ -15,6 +15,10 @@ export const getAll = async () => {
 export const getOne = async (recipeId) => {
     const data = await request.get(`${url}/${recipeId}`);
 
+    if(data.length === 0){
+        throw ('Invalid recipe ID')
+    }
+
     return data;
 };
 

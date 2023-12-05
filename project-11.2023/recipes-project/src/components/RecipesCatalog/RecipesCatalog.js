@@ -27,7 +27,7 @@ export const RecipeCatalog = () => {
 
             return finalRes;
         }).then(res => setState([...res]));
-        
+        console.log(recipes);
     }, [])
 
 

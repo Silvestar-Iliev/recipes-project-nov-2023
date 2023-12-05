@@ -30,7 +30,7 @@ export const RecipeProvider = ({
         try {
             const newRecipe = await recipeService.create( data ); 
 
-            setRecipes(state => [...state, newRecipe])
+            setRecipes(state => [...state, {...newRecipe, likes: 0}])
 
             navigate('/recipes');            
         } catch (error) {

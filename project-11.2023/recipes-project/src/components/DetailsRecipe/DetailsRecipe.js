@@ -15,6 +15,7 @@ import { RecipeContext } from "../../contexts/RecipeContext";
 import { CommentsContainer } from "./CommentsContainer/CommentsContainer";
 import { EditDeleteButtons } from "./EditDeleteButtons/EditDeleteButtons";
 import { LikeButtons } from "./LikeButtons/LikeButtons";
+import { NotFound } from "../Home/NotFound";
 
 export const DetailsRecipe = () => {
     const { onDeleteClick } = useContext(RecipeContext);
@@ -23,13 +24,25 @@ export const DetailsRecipe = () => {
     const [recipe, setRecipe] = useState({});
     const [comments, setComments] = useState([]);
     const {userId, isAuthenticated, userEmail, username} = useContext(AuthContext);
-    
+    const [invalidRecipeId, setInvalidRecipeId] = useState(false);
 
     useEffect(() => {
-        recipeService.getOne(recipeId)
-            .then(res => {
-                setRecipe(res);
-            });
+
+        const getData = async () => {
+            try {
+                await recipeService.getOne(recipeId)
+                    .then(res => {
+                        setRecipe(res);
+                    });
+
+                
+            }catch(error){
+                if(error === 'Invalid recipe ID'){
+                    setInvalidRecipeId(true);
+                }
+            }
+        }
+
             
         commentService.getAll(recipeId)
             .then(res => {
@@ -45,6 +58,8 @@ export const DetailsRecipe = () => {
             .then(res => {
                 setRecipe(state => ({...state, favorites: res}));
             });
+
+        getData();
         
     }, [recipeId]);
 
@@ -104,38 +119,44 @@ export const DetailsRecipe = () => {
 
     
     return(
-        <div className={styles["details-container"]}>
-            <div className={styles["recipe-info"]}>
-                    <div className={styles["recipe-details"]}>
-                        <img src={recipe.imageUrl} alt={recipe.title} />
-                        <h2>{recipe.title}</h2>
-                        <p>For <span>100g</span></p>
-                        <div className={styles["recipe-macros"]}>
-                            <p>Calories: <span>{recipe.calories}</span></p>
-                            <p>Protein: <span>{recipe.protein}g</span></p>
-                            <p>Carbohydrates: <span>{recipe.carbs}g</span></p>
-                            <p>Fat: <span>{recipe.fat}g</span></p>
+        <>
+        {invalidRecipeId 
+            ? <NotFound /> 
+            : (<div className={styles["details-container"]}>
+                <div className={styles["recipe-info"]}>
+                        <div className={styles["recipe-details"]}>
+                            <img src={recipe.imageUrl} alt={recipe.title} />
+                            <h2>{recipe.title}</h2>
+                            <p>For <span>100g</span></p>
+                            <div className={styles["recipe-macros"]}>
+                                <p>Calories: <span>{recipe.calories}</span></p>
+                                <p>Protein: <span>{recipe.protein}g</span></p>
+                                <p>Carbohydrates: <span>{recipe.carbs}g</span></p>
+                                <p>Fat: <span>{recipe.fat}g</span></p>
+                            </div>
+                            <p>{recipe.description}</p>
                         </div>
-                        <p>{recipe.description}</p>
-                    </div>
-                    <div className={styles["buttons"]}>
-                        {isOwner && <EditDeleteButtons onDeleteClick={onDeleteClick} recipe={recipe} />}
-                        {isAuthenticated && !isOwner &&
-                            <LikeButtons 
-                                addLikeClick={addLikeClick} 
-                                addToFavoritesClick={addToFavoritesClick}
-                                isLiker={isLiker} 
-                                isFavorite={isFavorite}
-                                likes={recipe.likes?.length} 
-                            />
-                        }  
-                    </div>
-            </div>
-            <CommentsContainer 
-                comments={comments} 
-                onCreateCommentSubmit={onCreateCommentSubmit} 
-                onDeleteCommentClick={onDeleteCommentClick}
-            />
-        </div>
+                        <div className={styles["buttons"]}>
+                            {isOwner && <EditDeleteButtons onDeleteClick={onDeleteClick} recipe={recipe} />}
+                            {isAuthenticated && !isOwner &&
+                                <LikeButtons 
+                                    addLikeClick={addLikeClick} 
+                                    addToFavoritesClick={addToFavoritesClick}
+                                    isLiker={isLiker} 
+                                    isFavorite={isFavorite}
+                                    likes={recipe.likes?.length} 
+                                />
+                            }  
+                        </div>
+                </div>
+                <CommentsContainer 
+                    comments={comments} 
+                    onCreateCommentSubmit={onCreateCommentSubmit} 
+                    onDeleteCommentClick={onDeleteCommentClick}
+                />
+            </div>)
+        }        
+        </>
+        
     );
 };
