@@ -1343,7 +1343,6 @@
                 "protein": "13",
                 "carbs": "50",
                 "fat": "25",
-                "likes": "0",
                 "_createdOn": 1701263150264,
                 "_id": "4bb1a1d0-e8b7-4810-ade7-ea94c593ebfd"
             },
@@ -1356,7 +1355,6 @@
                 "protein": "13",
                 "carbs": "46",
                 "fat": "25",
-                "likes": "0",
                 "_createdOn": 1701263357790,
                 "_id": "c17f24dc-c107-4602-8855-cf7d6612c225"
             },
@@ -1369,7 +1367,6 @@
                 "protein": "15",
                 "carbs": "35",
                 "fat": "15",
-                "likes": "0",
                 "_createdOn": 1701263592717,
                 "_id": "7d2b9ce5-7374-4e55-bce9-ca0b3b278237"
             },
@@ -1382,7 +1379,6 @@
                 "protein": "16",
                 "carbs": "39",
                 "fat": "22",
-                "likes": "0",
                 "_createdOn": 1701265204643,
                 "_id": "c6c1a502-7425-4e8b-bafb-762cefa7b4ca"
             },

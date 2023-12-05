@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import * as recipeService from "../services/recipeService";
-import * as likeService from "../services/likeService";
 
 
 export const RecipeContext = createContext();
@@ -17,13 +16,11 @@ export const RecipeProvider = ({
     
 
     useEffect(() => { 
-        const getData = async () => {
-            await recipeService.getAll().then(res => { 
-                setRecipes(res);
-            });
-        }
-
-        getData();
+        recipeService.getAll().then(res => { 
+            const result = res.map(x => ({...x, likes:0}))
+            setRecipes(result);
+        });
+        
     }, []);
     
     
