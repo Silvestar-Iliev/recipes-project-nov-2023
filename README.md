@@ -24,19 +24,19 @@ The information for each recipe is in a card containing a photo, title and likes
   * Details page - the page contains information about the recipe and comments to it.
     1. If the user is a guest, he will be able to see the comments for each recipe.
     2. If the user is a logged in user, he will be able to write comments.
-       2.1. As well as being able to delete their own comments.
+       - As well as being able to delete their own comments.
     3. If the user is a logged-in user and is the owner of the recipe, he has access to buttons for deleting and changing the recipe.
     4. If the user is a logged in user and is not the owner of the recipe, he has access to buttons for liking and adding to favorites.
-       4.1. If the user has liked, the button is disabled and cannot re-like and cannot un-like.
-       4.2. If it has been added to favorites, the button is turned off, but the same can be turned on again if the user deletes the recipe from the list of favorites.
+       - If the user has liked, the button is disabled and cannot re-like and cannot un-like.
+       - If it has been added to favorites, the button is turned off, but the same can be turned on again if the user deletes the recipe from the list of favorites.
   * Profile page - contains information about the user's username and email.
      The page also contains two lists:
     1. List of own recipes - created by the user, with each link leading to the corresponding recipe.
     2. List of favorite recipes - added by the user with the button "add to favorites" from the detailed page of each recipe. Each link leads to the corresponding recipe.
        Each recipe has two buttons for:
-        2.1. A button to remove the recipe from the list of favorites, after which the button "Add to favorites" in the detailed page of the corresponding recipe will be active again.
-        2.2. Recipe selection button.
-        2.3. To the list of favorite recipes there is a button for calculating all selected recipes. After pressing it, a modal is rendered containing information about the selected recipes and how many total calories, proteins, carbohydrates and fats are contained per 100g. from each recipe.
+        - A button to remove the recipe from the list of favorites, after which the button "Add to favorites" in the detailed page of the corresponding recipe will be active again.
+        - Recipe selection button.
+        - To the list of favorite recipes there is a button for calculating all selected recipes. After pressing it, a modal is rendered containing information about the selected recipes and how many total calories, proteins, carbohydrates and fats are contained per 100g. from each recipe.
 
 I. Non-logged users have access to:
     - Home page;
