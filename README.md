@@ -3,23 +3,54 @@
 
 # Description:
 
-This project is an exam assignment for the ReactJS course at SoftUni in October 2023. As of November 16, 2023, the project is in the development stage, with the final submission deadline set for December 9, 2023. The project is a Single Page Application (SPA) developed using React, with custom HTML and CSS. It utilizes the SoftUni educational server as a backend. The application serves as a recipe website where users can create, modify, delete, and read various recipes.
+This project is an exam assignment for the ReactJS course at SoftUni in October 2023. The project is in the development stage, with the final submission deadline set for December 9, 2023. The project is a Single Page Application (SPA) developed using React, with custom HTML and CSS. It utilizes the SoftUni educational server as a backend. The application serves as a recipe website where users can create, modify, delete, and read various recipes.
 
 # Installation:
 
 1. Download the project folder and place it in the same directory as the SoftUni educational server folder.
 2. Install the required node_modules by running npm i in the recipes-project folder.
-3. In the project folder, open the terminal and start the project with npm start.
-4. In the server folder, open the terminal and start the server with node server.js.
+3. In the project folder, open the terminal and start the project with "npm start".
+4. In the server folder, open the terminal and start the server with "node server.js".
 
-# Usage and Features:
+### The project has the following pages and basic functionalities:
+  * Home page - renders the last three recipes added.
+The information for each recipe is in a card containing a photo, title and likes of the recipe;
+  * All recipes page (Catalog page) - renders all added recipes, with the recipes sorted by the number of likes (from most to least).
+The information for each recipe is in a card containing a photo, title and likes of the recipe;
+    Login page - representing a login form in the application, requiring email and password;
+  * Register page - representing a registration form in the application, requiring email, username, password and repeatPassword;
+  * Create recipe page - representing a form to create a recipe, accepting data for title, imgURL, short description, calories, protein, carbohydrates and fat.
+  * Edit recipe page - representing a form for editing an existing recipe;
+  * Details page - the page contains information about the recipe and comments to it.
+    1. If the user is a guest, he will be able to see the comments for each recipe.
+    2. If the user is a logged in user, he will be able to write comments.
+       2.1. As well as being able to delete their own comments.
+    3. If the user is a logged-in user and is the owner of the recipe, he has access to buttons for deleting and changing the recipe.
+    4. If the user is a logged in user and is not the owner of the recipe, he has access to buttons for liking and adding to favorites.
+       4.1. If the user has liked, the button is disabled and cannot re-like and cannot un-like.
+       4.2. If it has been added to favorites, the button is turned off, but the same can be turned on again if the user deletes the recipe from the list of favorites.
+  * Profile page - contains information about the user's username and email.
+     The page also contains two lists:
+    1. List of own recipes - created by the user, with each link leading to the corresponding recipe.
+    2. List of favorite recipes - added by the user with the button "add to favorites" from the detailed page of each recipe. Each link leads to the corresponding recipe.
+       Each recipe has two buttons for:
+        2.1. A button to remove the recipe from the list of favorites, after which the button "Add to favorites" in the detailed page of the corresponding recipe will be active again.
+        2.2. Recipe selection button.
+        2.3. To the list of favorite recipes there is a button for calculating all selected recipes. After pressing it, a modal is rendered containing information about the selected recipes and how many total calories, proteins, carbohydrates and fats are contained per 100g. from each recipe.
 
-The project features a static home page, a page displaying all created recipes, and a detailed page for each recipe, as well as login and register pages.
-After registration or login, users have access to the recipe creation form. Each recipe includes information such as title, description, and nutritional values for 100g of the respective dish (calories, protein, carbohydrates, and fat).
-Recipe creators (logged-in users) can delete or edit their recipes. Users who did not create the recipe can like it or add it to their favorites.
-All logged-in users can leave comments under each recipe.
-Each logged-in user has a profile page with information about the user, a list of recipes they've created, and a list of favorite recipes.
-Recipes in the favorites list can be removed, and users can calculate the total nutritional values for 100g of the selected recipes.
+I. Non-logged users have access to:
+    - Home page;
+    - All recipes (Catalog page);
+    - Login;
+    - Register;
+    - Details page - next to the recipe information and read comments, cannot write comments, like or add to favorites.
+
+II. A logged in user has access to:
+    - Home page;
+    - All recipes (Catalog page);
+    - Details page - can read and write comments (delete own comments), can like and add to favorites (if not owner of the recipe) or change and delete (if owner of the recipe);
+    - Profile page;
+    - Logout;
 
 # License:
 

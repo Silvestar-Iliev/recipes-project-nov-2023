@@ -14,7 +14,7 @@ export const Home = () => {
 
     
     useEffect(() => {
-
+        
         likeService.getAll()
             .then(res => {
 
