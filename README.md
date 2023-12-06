@@ -3,7 +3,7 @@
 
 # Description:
 
-This project is an exam assignment for the ReactJS course at SoftUni in October 2023. The project is in the development stage, with the final submission deadline set for December 9, 2023. The project is a Single Page Application (SPA) developed using React, with custom HTML and CSS. It utilizes the SoftUni educational server as a backend. The application serves as a recipe website where users can create, modify, delete, and read various recipes.
+This project is an exam assignment for the ReactJS course at SoftUni in October 2023. The project is in the development stage, with the final submission deadline set for December 9, 2023. The project is a Single Page Application (SPA) developed using React (create-react-app), with custom HTML and CSS. It utilizes the SoftUni educational server as a backend. The application serves as a recipe website where users can create, modify, delete, and read various recipes.
 
 # Installation:
 
