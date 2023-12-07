@@ -93,7 +93,7 @@ export const DetailsRecipe = () => {
     };
 
 
-    // add to favrites
+    // add to favorites
     const addToFavoritesClick = async() => {
 
         if (isFavorite) {

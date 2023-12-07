@@ -2,6 +2,7 @@ import * as request from "./requester";
 
 const url = 'http://localhost:3030/data/likes';
 
+// Use in Details page for set valid likes recipes state and for correct "Like" button state
 export const getLikes = async(recipeId) => {
     const query = encodeURIComponent(`recipeId="${recipeId}"`);
 
@@ -17,6 +18,7 @@ export const addLike = async(userId, recipeId) =>  {
     return getLikes(recipeId);
 }; 
 
+// Use in Recipes catalog & Home for coorect likes info in every Card recipe
 export const getAll = async () => {
 
     try {
@@ -28,10 +30,10 @@ export const getAll = async () => {
                     res.forEach(x => { 
                         currData[x] = (currData[x] || 0) + 1;  
                     });
-        
+                    
                     const sortedLikes = Object.entries(currData)
                                                         .sort((a, b) => b[1] - a[1]);
-                            
+                      
                     return sortedLikes;
                 });
 
