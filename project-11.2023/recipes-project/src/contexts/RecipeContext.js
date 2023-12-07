@@ -46,7 +46,7 @@ export const RecipeProvider = ({
             let recipeId = values._id;
             const editRecipe = await recipeService.edit(recipeId, values); 
 
-            setRecipes(state => state.map(x => x._id === recipeId ? editRecipe : x));
+            setRecipes(state => state.map(x => x._id === recipeId ? {...editRecipe, likes: x.likes} : x));
 
             navigate(`/recipes/${recipeId}`);            
         } catch (error) {
